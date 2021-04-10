@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SPARS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">SPARS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="web.html">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>RECONSYS</h1> 
+  <p>Know yourself</p> 
+</div>
+
+<!-- Container (Path Section) -->
+<div id="paths" class="container-fluid">
+  <div class="text-center">
+    <h2>Path</h2>
+    <h4>Choose a path that suits you</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Front-End Developer</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Technical Skills Needed</strong></p>
+          <p><strong>Development Language</strong> - HTML,CSS,JS,TS</p>
+          <p><strong>Database</strong> - (SQL,NOSQL)</p>
+          <p><strong>Tech Frameworks</strong> - React/Angular/Flutter/Django</p>
+          <p><strong>Version Control</strong>- Git</p>
+        </div>
+        <div class="panel-footer">
+          <h3>Become a Full-Stack Developer</h3>
+          <button class="btn btn-lg">Choose</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Back-End Developer</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Web Development Languages</strong> - Ruby/Python/PHP/Java</p>
+          <p><strong>Database</strong> - MySQL, MongoDB,Oracle,SQLServer</p>
+          <p><strong>API Knowledge</strong> - REST & SOAP</p>
+          <p><strong>Server Handling</strong> - Docker,Kubernets,Nginx,Node.js,New Relic</p>
+        </div>
+        <div class="panel-footer">
+          <h3>Become a Back-End Developer</h3>
+          <button class="btn btn-lg">Choose</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Full-Stack Developer</h1>
+        </div>
+        <div class="panel-body">
+		  <p><strong>Web Development Languages</strong>- Ruby/Python/PHP/Java</p>
+          <p><strong>Front End Technology</strong>- Angular/React/Angular/Flutter/Django</p>
+          <p><strong>Version Control</strong> - Git</p>
+          <p><strong>Server Handling</strong> - Docker,Kubernets,Nginx,Node.js,New Relic</p>
+          <p><strong>Working with API</strong> - REST & SOAP</p>
+          <p><strong>Database and Cache</strong>-  MySQL, MongoDB,Oracle,SQLServer,Memcached,Redis</p>
+		   <p><strong>Design Ability</strong> - UI/UX design</p>
+        </div></h3>
+        <div class="panel-footer">
+          <h3>Become a Full-Stack Developer
+          <button class="btn btn-lg">Choose</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+
+document.getElementById("submit").onclick = function() {
+	location.href = "paths.html";
+};
+
+</script>
+</body>
+</html>
